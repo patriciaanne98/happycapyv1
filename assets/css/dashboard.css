@@ -308,9 +308,9 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 25px;
     box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Add this */
-    max-width: calc(100vw - 360px); /* Add this */
-    box-sizing: border-box; /* Add this */
+    width: 100%;
+    max-width: calc(100vw - 360px);
+    box-sizing: border-box;
 }
 
 /* Dashboard Header */
@@ -360,11 +360,10 @@ body {
     transform: translateY(-2px);
 }
 
-/* Cards Grid */
+/* FIXED Cards Grid - This is the key fix! */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto; /* Three rows: 2 cards, 2 cards, shop */
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
@@ -381,13 +380,11 @@ body {
     position: relative;
     overflow: hidden;
     border: 3px solid transparent;
-    align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    min-height: 300px; /* Ensures consistent height */
+    min-height: 300px;
 }
 
 .module-card:hover {
@@ -432,11 +429,11 @@ body {
     border-color: #FF8DA4;
 }
 
-/* Shop Card - spans full width */
+/* FIXED Shop Card - spans full width on row 3 */
 .shop-card {
     background: linear-gradient(135deg, #FFF8E1, #FFF3C4);
     border-color: #FFD54F;
-    grid-column: 1 / -1; /* Spans all columns */
+    grid-column: 1 / -1; /* This makes it span both columns */
     border-radius: 25px;
     padding: 2rem;
     cursor: pointer;
@@ -444,6 +441,9 @@ body {
     border: 3px solid #FFD54F;
     text-align: center;
     min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .shop-card:hover {
@@ -495,7 +495,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
-    margin-top: auto; /* Pushes button to bottom */
+    margin-top: auto;
 }
 
 /* Button Colors */
@@ -552,6 +552,7 @@ body {
     font-size: 1.1rem;
     font-weight: 500;
 }
+
 /* Modal Styles */
 .modal {
     display: none;
