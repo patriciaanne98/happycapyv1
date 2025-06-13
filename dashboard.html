@@ -16,11 +16,14 @@
                 <div class="settings-icon" onclick="openSettings()">⚙️</div>
                 <div class="user-avatar">
                     <div class="avatar-circle">
-                        <span class="avatar-emoji" id="userEmoji">😊</span>
+                        <span id="userEmoji">😊</span>
                     </div>
                 </div>
                 <div class="user-level">
                     <span class="level-text">Level <span id="userLevel">2</span>: <span id="userTitle">Social Butterfly</span></span>
+                    <div class="user-info">
+                        <small id="userAge" style="font-size: 0.9rem; opacity: 0.7;"></small>
+                    </div>
                 </div>
             </div>
 
@@ -127,7 +130,7 @@
             <header class="dashboard-header">
                 <div class="welcome-section">
                     <h1 class="welcome-title">Welcome back, <span id="userName">Sarah</span>!</h1>
-                    <p class="welcome-subtitle">Ready to grow your confidence today and earn XP?</p>
+                    <p class="welcome-subtitle" id="personalizedGoal">Ready to grow your confidence today and earn XP?</p>
                 </div>
                 <button class="logout-btn" onclick="logout()">LOGOUT</button>
             </header>
@@ -135,41 +138,50 @@
             <!-- Main Cards Grid -->
             <div class="cards-grid">
                 <!-- Capy Simulation Card -->
-                <div class="module-card purple-card" onclick="openModule('simulation')">
+                <div class="module-card purple-card">
                     <div class="card-content">
                         <div class="card-icon">🧠</div>
                         <h3 class="card-title">Capy Simulation</h3>
-                        <p class="card-description">Practice real-world conversations.</p>
+                        <p class="card-description" id="simulationDescription">Practice real-world conversations.</p>
+                         <a href="https://happy-capy-v2-0.vercel.app/">
                         <button class="card-btn purple-btn">Get Started</button>
+                         </a>
                     </div>
                 </div>
 
                 <!-- Mindfulness Card -->
-                <div class="module-card green-card" onclick="openModule('mindfulness')">
+                <div class="module-card green-card">
                     <div class="card-content">
                         <div class="card-icon">🧘‍♀️</div>
                         <h3 class="card-title">Mindfulness</h3>
                         <p class="card-description">Try breathing exercises.</p>
+                         <a href="https://serene-capy-calm-space-88.lovable.app/">
                         <button class="card-btn green-btn">Get Started</button>
+                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Daily Affirmations Card -->
-                <div class="module-card yellow-card" onclick="openModule('affirmations')">
+                <div class="module-card yellow-card">
                     <div class="card-content">
                         <div class="card-icon">⭐</div>
                         <h3 class="card-title">Daily Affirmations</h3>
+                        <p class="card-description">Start your day with kind, powerful words.</p>
+                        <a href="https://claude.ai/public/artifacts/f7860882-f770-4829-8d99-c525600da0a9">
                         <button class="card-btn yellow-btn">Get Started</button>
+                        </a>
                     </div>
-                    <div class="card-arrow">></div>
                 </div>
 
                 <!-- Journal Entries Card -->
                 <div class="module-card pink-card" onclick="openModule('journal')">
                     <div class="card-content">
                         <div class="card-icon">📝</div>
-                        <h3 class="card-title">Journal Entries</h3>
-                        <button class="card-btn-link">Get Started</button>
+                        <h3 class="card-title">Mood Journal</h3>
+                        <p class="card-description">Reflect on how you feel with simple prompts.</p>
+                         <a href=" https://personal-time-capsule.lovable.app/"></a>
+                        <button class="card-btn red-btn">Get Started</button>
                     </div>
                 </div>
 
@@ -182,6 +194,69 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div id="userProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>👤 Your Profile</h2>
+                <span class="close" onclick="closeUserProfile()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="profile-section">
+                    <h3>Personal Information</h3>
+                    <div class="profile-info">
+                        <div class="info-row">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value" id="profileName">Not provided</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Age:</span>
+                            <span class="info-value" id="profileAge">Not provided</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Birthday:</span>
+                            <span class="info-value" id="profileBirthday">Not provided</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Gender:</span>
+                            <span class="info-value" id="profileGender">Not provided</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Goal:</span>
+                            <span class="info-value" id="profileGoal">Not provided</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Member since:</span>
+                            <span class="info-value" id="memberSince">Today</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h3>Progress Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="modalLevel">2</div>
+                            <div class="stat-text">Current Level</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="modalXPTotal">86</div>
+                            <div class="stat-text">Total XP</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="modalStreak">3</div>
+                            <div class="stat-text">Day Streak</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="modalBest">3</div>
+                            <div class="stat-text">Best Streak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Capy Shop Modal -->
@@ -282,7 +357,7 @@
     </div>
 
     <script>
-        // User data management
+        // Global user data and progress
         let userData = {};
         let userProgress = {
             xp: 86,
@@ -312,11 +387,20 @@
             const storedData = localStorage.getItem('happyCapyUser');
             if (storedData) {
                 userData = JSON.parse(storedData);
-                displayUserInfo();
             } else {
-                // Redirect to login if no user data
-                window.location.href = 'login.html';
+                // Create sample user data for testing
+                userData = {
+                    name: 'Sarah',
+                    age: '22',
+                    birthMonth: '3',
+                    birthDay: '15',
+                    birthYear: '2002',
+                    gender: 'female',
+                    goal: 'making-friends'
+                };
+                localStorage.setItem('happyCapyUser', JSON.stringify(userData));
             }
+            displayUserInfo();
         }
 
         // Load user progress
@@ -333,11 +417,36 @@
             localStorage.setItem('happyCapyProgress', JSON.stringify(userProgress));
         }
 
-        // Display user information
+        // Display user information throughout the dashboard
         function displayUserInfo() {
+            // Update main welcome
             if (userData.name) {
                 document.getElementById('userName').textContent = userData.name;
             }
+
+            // Update age display
+            if (userData.age) {
+                document.getElementById('userAge').textContent = `Age: ${userData.age}`;
+            }
+
+            // Update personalized welcome message based on user data
+            const personalizedGoal = document.getElementById('personalizedGoal');
+            if (userData.goal && personalizedGoal) {
+                const goalMessage = getPersonalizedGoalMessage(userData.goal);
+                personalizedGoal.textContent = goalMessage;
+            }
+
+            // Update recommended simulation based on user goal
+            updateRecommendedSimulation();
+            
+            // Display detailed user info in console for debugging
+            console.log('User Data Loaded:', {
+                name: userData.name,
+                age: userData.age,
+                birthday: `${userData.birthMonth}/${userData.birthDay}/${userData.birthYear}`,
+                gender: userData.gender,
+                goal: getGoalDisplayText(userData.goal)
+            });
         }
 
         // Display user progress
@@ -348,7 +457,69 @@
             document.getElementById('userStreak').textContent = userProgress.streak;
             document.getElementById('userBest').textContent = userProgress.best;
             document.getElementById('userEmoji').textContent = userProgress.avatar;
-            document.getElementById('modalXP').textContent = `${userProgress.xp} XP`;
+            
+            const modalXP = document.getElementById('modalXP');
+            if (modalXP) {
+                modalXP.textContent = `${userProgress.xp} XP`;
+            }
+        }
+
+        // Get display text for goals
+        function getGoalDisplayText(goalValue) {
+            const goalMap = {
+                'speaking-class': 'Speaking up in class',
+                'making-friends': 'Making new friends',
+                'job-interviews': 'Preparing for job interviews',
+                'presentations': 'Giving presentations',
+                'social-events': 'Feeling comfortable at social events',
+                'dating-confidence': 'Building dating confidence',
+                'family-conversations': 'Better family conversations',
+                'online-interactions': 'Improving online interactions',
+                'general-confidence': 'Building general confidence',
+                'anxiety-management': 'Managing social anxiety',
+                'other': 'Other goals'
+            };
+            return goalMap[goalValue] || goalValue;
+        }
+
+        // Get personalized goal message
+        function getPersonalizedGoalMessage(goalValue) {
+            const goalMessages = {
+                'speaking-class': 'Let\'s practice speaking up in class with confidence!',
+                'making-friends': 'Ready to learn how to make meaningful connections?',
+                'job-interviews': 'Time to ace those job interviews with practice!',
+                'presentations': 'Let\'s build your presentation skills step by step.',
+                'social-events': 'Practice makes perfect for social situations!',
+                'dating-confidence': 'Build confidence for meaningful relationships.',
+                'family-conversations': 'Improve communication with family members.',
+                'online-interactions': 'Feel confident in digital conversations.',
+                'general-confidence': 'Build confidence in all areas of your life.',
+                'anxiety-management': 'Learn tools to manage social anxiety effectively.',
+                'other': 'Let\'s work on your personal confidence goals!'
+            };
+            return goalMessages[goalValue] || 'Ready to grow your confidence today and earn XP?';
+        }
+
+        // Update recommended simulation based on user goal
+        function updateRecommendedSimulation() {
+            const simulationDescription = document.getElementById('simulationDescription');
+            if (!simulationDescription) return;
+            
+            const simRecommendations = {
+                'speaking-class': 'Perfect for your goal! Practice speaking up in class discussions.',
+                'making-friends': 'Ideal for you! Learn how to approach new people and start conversations.',
+                'job-interviews': 'Exactly what you need! Prepare for job interviews with realistic scenarios.',
+                'presentations': 'Perfect match! Build confidence in giving presentations.',
+                'social-events': 'Great for your goal! Feel comfortable at parties and social gatherings.',
+                'dating-confidence': 'Practice meaningful conversations and build romantic confidence.',
+                'family-conversations': 'Improve communication skills with family members.',
+                'online-interactions': 'Practice digital communication and online conversations.',
+                'general-confidence': 'Build overall social confidence in various situations.',
+                'anxiety-management': 'Practice calming techniques in social scenarios.'
+            };
+            
+            const recommendation = simRecommendations[userData.goal] || 'Practice real-world conversations.';
+            simulationDescription.textContent = recommendation;
         }
 
         // Award XP for entering dashboard
@@ -372,6 +543,7 @@
             showXPNotification(`+10 XP for starting ${moduleName}!`);
             saveUserProgress();
             displayUserProgress();
+            checkLevelUp();
 
             // Module-specific actions
             switch(moduleName) {
@@ -393,7 +565,10 @@
         // Capy Shop functionality
         function openCapyShop() {
             document.getElementById('capyShopModal').style.display = 'block';
-            document.getElementById('modalXP').textContent = `${userProgress.xp} XP`;
+            const modalXP = document.getElementById('modalXP');
+            if (modalXP) {
+                modalXP.textContent = `${userProgress.xp} XP`;
+            }
         }
 
         function closeCapyShop() {
@@ -407,7 +582,10 @@
 
             // Show/hide shop items
             document.querySelectorAll('.shop-items').forEach(items => items.classList.add('hidden'));
-            document.getElementById(category).classList.remove('hidden');
+            const categoryElement = document.getElementById(category);
+            if (categoryElement) {
+                categoryElement.classList.remove('hidden');
+            }
         }
 
         function buyItem(itemId, cost) {
@@ -424,6 +602,7 @@
                 if (itemId.includes('capy')) {
                     userProgress.equippedItems.avatar = itemEmoji;
                     userProgress.avatar = itemEmoji;
+                    document.getElementById('userEmoji').textContent = itemEmoji;
                 }
 
                 saveUserProgress();
@@ -467,58 +646,67 @@
             setTimeout(() => {
                 notification.classList.remove('show');
                 setTimeout(() => {
-                    document.body.removeChild(notification);
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
                 }, 300);
             }, 3000);
         }
 
-        // Settings and logout
+        // Settings and profile functionality
         function openSettings() {
-            alert('⚙️ Settings panel coming soon! You\'ll be able to customize notifications, privacy, and more.');
+            document.getElementById('userProfileModal').style.display = 'block';
+            displayUserProfile();
+        }
+
+        function closeUserProfile() {
+            document.getElementById('userProfileModal').style.display = 'none';
+        }
+
+        function displayUserProfile() {
+            document.getElementById('profileName').textContent = userData.name || 'Not provided';
+            document.getElementById('profileAge').textContent = userData.age ? `${userData.age} years old` : 'Not provided';
+            
+            // Format birthday
+            if (userData.birthMonth && userData.birthDay && userData.birthYear) {
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+                const monthName = months[parseInt(userData.birthMonth) - 1];
+                document.getElementById('profileBirthday').textContent = `${monthName} ${userData.birthDay}, ${userData.birthYear}`;
+            } else {
+                document.getElementById('profileBirthday').textContent = 'Not provided';
+            }
+            
+            // Format gender
+            const genderMap = {
+                'female': 'Female',
+                'male': 'Male',
+                'non-binary': 'Non-binary',
+                'prefer-not-to-say': 'Prefer not to say',
+                'other': 'Other'
+            };
+            document.getElementById('profileGender').textContent = genderMap[userData.gender] || 'Not provided';
+            
+            // Format goal
+            document.getElementById('profileGoal').textContent = getGoalDisplayText(userData.goal) || 'Not provided';
+            
+            // Set member since date
+            document.getElementById('memberSince').textContent = new Date().toLocaleDateString();
+            
+            // Update progress stats in modal
+            document.getElementById('modalLevel').textContent = userProgress.level;
+            document.getElementById('modalXPTotal').textContent = userProgress.xp;
+            document.getElementById('modalStreak').textContent = userProgress.streak;
+            document.getElementById('modalBest').textContent = userProgress.best;
         }
 
         function logout() {
             if (confirm('Are you sure you want to logout?')) {
                 localStorage.removeItem('happyCapyUser');
-                window.location.href = 'index.html';
+                localStorage.removeItem('happyCapyProgress');
+                // For demo purposes, reload instead of redirecting
+                window.location.reload();
             }
-        }
-
-        function setupDashboard() {
-            console.log('Dashboard loaded for user:', userData.name);
-            
-            // Close modal when clicking outside
-            window.onclick = function(event) {
-                const modal = document.getElementById('capyShopModal');
-                if (event.target === modal) {
-                    closeCapyShop();
-                }
-            }
-        }
-
-        // Simulate completing activities (for testing)
-        function completeActivity(activityType) {
-            let xpGain = 0;
-            switch(activityType) {
-                case 'simulation':
-                    xpGain = 25;
-                    break;
-                case 'mindfulness':
-                    xpGain = 15;
-                    break;
-                case 'journal':
-                    xpGain = 20;
-                    break;
-                case 'affirmation':
-                    xpGain = 10;
-                    break;
-            }
-            
-            userProgress.xp += xpGain;
-            checkLevelUp();
-            saveUserProgress();
-            displayUserProgress();
-            showXPNotification(`+${xpGain} XP for completing ${activityType}!`);
         }
 
         // Check for level up
@@ -536,6 +724,8 @@
                 userProgress.level = newLevel;
                 userProgress.title = getLevelTitle(newLevel);
                 showXPNotification(`🎉 Level Up! You're now Level ${newLevel}: ${userProgress.title}!`);
+                saveUserProgress();
+                displayUserProgress();
             }
         }
 
@@ -550,6 +740,23 @@
                 'Social Superstar'
             ];
             return titles[level - 1] || 'Legendary Capy';
+        }
+
+        function setupDashboard() {
+            console.log('Dashboard loaded for user:', userData.name);
+            
+            // Close modals when clicking outside
+            window.onclick = function(event) {
+                const shopModal = document.getElementById('capyShopModal');
+                const profileModal = document.getElementById('userProfileModal');
+                
+                if (event.target === shopModal) {
+                    closeCapyShop();
+                }
+                if (event.target === profileModal) {
+                    closeUserProfile();
+                }
+            }
         }
     </script>
 </body>

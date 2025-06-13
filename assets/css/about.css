@@ -160,7 +160,7 @@ nav {
 /* Hero Section */
 .hero {
     padding: 10rem 0 6rem;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f5e8 100%);
+    background: linear-gradient(135deg, #9429be 0%, #b395b6 100%);
     position: relative;
     overflow: hidden;
 }
@@ -188,14 +188,14 @@ nav {
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #9fdb76;
     margin-bottom: 2rem;
     line-height: 1.2;
 }
 
 .hero-content p {
     font-size: 1.3rem;
-    color: #5a6c7d;
+    color: #f9fcff;
     line-height: 1.6;
     max-width: 500px;
 }
@@ -216,7 +216,7 @@ nav {
 /* Our Story Section */
 .our-story {
     padding: 8rem 0;
-    background: #ffffff;
+    background: #baebd2;
 }
 
 .story-content {
@@ -229,12 +229,12 @@ nav {
 .story-text h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #9b1a9b;
     margin-bottom: 2rem;
 }
 
 .story-intro {
-    background: linear-gradient(135deg, #8B7ED8, #50C878);
+    background: linear-gradient(135deg, #c720ab, #10943c);
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 2rem;
@@ -250,14 +250,13 @@ nav {
 
 .story-details p {
     font-size: 1.1rem;
-    color: #5a6c7d;
+    color: #66067e;
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
 
 .story-img {
     width: 100%;
-    height: 400px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -266,13 +265,13 @@ nav {
 /* Mission Section */
 .mission {
     padding: 8rem 0;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f5e8 100%);
+    background: linear-gradient(135deg, #dfa8f5 0%, #71e971 100%);
 }
 
 .mission h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #7a1892;
     text-align: center;
     margin-bottom: 4rem;
 }
@@ -284,7 +283,7 @@ nav {
 }
 
 .mission-card {
-    background: white;
+    background: rgb(210, 255, 159);
     padding: 3rem 2rem;
     border-radius: 20px;
     text-align: center;
@@ -331,13 +330,13 @@ nav {
 /* Team Section */
 .team {
     padding: 8rem 0;
-    background: #ffffff;
+    background: #ffd6f3;
 }
 
 .team h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #7a1892;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -358,7 +357,7 @@ nav {
 }
 
 .team-member {
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
@@ -410,13 +409,13 @@ nav {
 /* Values Section */
 .values {
     padding: 8rem 0;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f5e8 100%);
+    background: linear-gradient(135deg, #f59ef5 0%, #fcfdfc 100%);
 }
 
 .values h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #550596;
     text-align: center;
     margin-bottom: 4rem;
 }
@@ -428,14 +427,17 @@ nav {
 }
 
 .value-item {
-    background: white;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  /* NEW FLEX DIRECTION */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers icon, title, and text */
+  text-align: center;
 }
 
 .value-item:hover {
@@ -443,9 +445,9 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.value-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
+    .value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .value-item h3 {
@@ -476,7 +478,7 @@ nav {
 .collab-text h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+    color: #7a1892;
     margin-bottom: 2rem;
 }
 
@@ -498,8 +500,8 @@ nav {
 /* Impact Section */
 .impact {
     padding: 8rem 0;
-    background: linear-gradient(135deg, #8B7ED8 0%, #50C878 100%);
-    color: white;
+    background: linear-gradient(135deg, #67fa8736 0%, #fcd6ef 100%);
+ color: #7a1892;
 }
 
 .impact h2 {
@@ -521,7 +523,7 @@ nav {
     padding: 2.5rem 2rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(133, 34, 136, 0.2);
     text-align: center;
 }
 
@@ -552,7 +554,7 @@ nav {
 .cta-content h2 {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #2c3e50;
+   color: #7a1892;
     margin-bottom: 2rem;
 }
 
@@ -610,36 +612,6 @@ nav {
 }
 
 .footer-brand .logo-capy {
- width: 45px;
-    height: 45px;
-    object-fit: contain;
-    animation: wave 3s infinite ease-in-out;
-}
-
-@keyframes wave {
-    0%, 100% { 
-        transform: translateY(0); 
-    }
-    50% { 
-        transform: translateY(-3px); 
-    }
-}
-
-/* Optional: Add hover effect */
-.logo:hover .logo-capy {
-    animation: quickWave 0.6s ease-in-out;
-}
-
-@keyframes quickWave {
-    0%, 100% { 
-        transform: rotate(0deg); 
-    }
-    25% { 
-        transform: rotate(10deg); 
-    }
-    75% { 
-        transform: rotate(-10deg); 
-    }
 }
 
 .footer-brand p {

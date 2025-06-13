@@ -245,18 +245,11 @@ nav {
     flex-direction: column;
 }
 
-.capy-img {
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-    animation: wave 2s infinite ease-in-out;
-     transform-origin: center bottom; /* This makes it wave from the base */
-}
 
 /* WAVING CAPYBARA ANIMATION */
 .capy-img {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 700px;
     object-fit: contain;
     animation: wave 2s infinite ease-in-out;
     transform-origin: center bottom; /* This makes it wave from the base */
@@ -296,8 +289,8 @@ nav {
 
 .speech-bubble {
     position: absolute;
-    top: -30px;
-    left: 20%;
+    top: 60px;
+    left: 25%;
     transform: translateX(-50%);
     background-color: #fff;
     border: 2px solid #4c2a85;
@@ -676,7 +669,6 @@ nav {
 }
 
 .footer-brand .logo-capy {
-    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
