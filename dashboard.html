@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HappyCapy</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <!-- User Profile Section -->
+            <div class="user-profile-card">
+                <div class="settings-icon" onclick="openSettings()">⚙️</div>
+                <div class="user-avatar">
+                    <div class="avatar-circle">
+                        <span class="avatar-emoji" id="userEmoji">😊</span>
+                    </div>
+                </div>
+                <div class="user-level">
+                    <span class="level-text">Level <span id="userLevel">2</span>: <span id="userTitle">Social Butterfly</span></span>
+                </div>
+            </div>
+
+            <!-- Daily Check-in -->
+            <div class="checkin-card">
+                <div class="checkin-header">
+                    <span class="fire-icon">🔥</span>
+                    <span class="checkin-title">Daily Check-In</span>
+                </div>
+                <div class="week-calendar">
+                    <div class="day-item">
+                        <span>M</span>
+                        <div class="day-dot completed"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>T</span>
+                        <div class="day-dot completed"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>W</span>
+                        <div class="day-dot completed"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>T</span>
+                        <div class="day-dot missed"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>F</span>
+                        <div class="day-dot"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>S</span>
+                        <div class="day-dot"></div>
+                    </div>
+                    <div class="day-item">
+                        <span>S</span>
+                        <div class="day-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confidence Rating -->
+            <div class="confidence-card">
+                <div class="confidence-title">Confidence Rating:</div>
+                <div class="confidence-slider">
+                    <div class="slider-track">
+                        <div class="slider-fill" style="width: 65%"></div>
+                        <div class="slider-thumb" style="left: 65%"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>Low</span>
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-card">
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <div class="stat-label">Streaks</div>
+                        <div class="stat-value" id="userStreak">3</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Best</div>
+                        <div class="stat-value" id="userBest">3</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Capy Tokens</div>
+                        <div class="stat-value" id="userXP">86 XP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="activities-card">
+                <div class="activities-title">Recent Activities</div>
+                <div class="activities-grid">
+                    <div class="activity-item orange"></div>
+                    <div class="activity-item green"></div>
+                    <div class="activity-item purple"></div>
+                    <div class="activity-item red"></div>
+                </div>
+                <div class="activity-icons">
+                    <span class="activity-icon">🏆</span>
+                    <span class="activity-icon">⭐</span>
+                </div>
+            </div>
+
+            <!-- Awards & Badges -->
+            <div class="awards-card">
+                <div class="awards-title">Awards & Badges</div>
+                <div class="badges-row">
+                    <div class="badge-item green"></div>
+                    <div class="badge-item orange"></div>
+                    <div class="badge-item red"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-dashboard">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="welcome-section">
+                    <h1 class="welcome-title">Welcome back, <span id="userName">Sarah</span>!</h1>
+                    <p class="welcome-subtitle">Ready to grow your confidence today and earn XP?</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">LOGOUT</button>
+            </header>
+
+            <!-- Main Cards Grid -->
+            <div class="cards-grid">
+                <!-- Capy Simulation Card -->
+                <div class="module-card purple-card" onclick="openModule('simulation')">
+                    <div class="card-content">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Capy Simulation</h3>
+                        <p class="card-description">Practice real-world conversations.</p>
+                        <button class="card-btn purple-btn">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Mindfulness Card -->
+                <div class="module-card green-card" onclick="openModule('mindfulness')">
+                    <div class="card-content">
+                        <div class="card-icon">🧘‍♀️</div>
+                        <h3 class="card-title">Mindfulness</h3>
+                        <p class="card-description">Try breathing exercises.</p>
+                        <button class="card-btn green-btn">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Daily Affirmations Card -->
+                <div class="module-card yellow-card" onclick="openModule('affirmations')">
+                    <div class="card-content">
+                        <div class="card-icon">⭐</div>
+                        <h3 class="card-title">Daily Affirmations</h3>
+                        <button class="card-btn yellow-btn">Get Started</button>
+                    </div>
+                    <div class="card-arrow">></div>
+                </div>
+
+                <!-- Journal Entries Card -->
+                <div class="module-card pink-card" onclick="openModule('journal')">
+                    <div class="card-content">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Journal Entries</h3>
+                        <button class="card-btn-link">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Capy Shop Card -->
+                <div class="module-card shop-card" onclick="openCapyShop()">
+                    <div class="card-content">
+                        <h3 class="shop-title">Capy Shop</h3>
+                        <p class="shop-description">Customize your Capy - use your XP!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Capy Shop Modal -->
+    <div id="capyShopModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🛍️ Capy Shop</h2>
+                <span class="close" onclick="closeCapyShop()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="xp-balance">
+                    <div class="balance-info">
+                        <span class="balance-label">Your XP:</span>
+                        <span class="balance-amount" id="modalXP">86 XP</span>
+                    </div>
+                </div>
+                
+                <div class="shop-categories">
+                    <div class="category-tab active" onclick="showCategory('avatars')">Avatars</div>
+                    <div class="category-tab" onclick="showCategory('accessories')">Accessories</div>
+                    <div class="category-tab" onclick="showCategory('backgrounds')">Backgrounds</div>
+                </div>
+
+                <div class="shop-items" id="avatars">
+                    <div class="shop-item">
+                        <div class="item-preview">😊</div>
+                        <div class="item-info">
+                            <div class="item-name">Happy Capy</div>
+                            <div class="item-price">Free</div>
+                        </div>
+                        <button class="item-btn equipped">Equipped</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-preview">😎</div>
+                        <div class="item-info">
+                            <div class="item-name">Cool Capy</div>
+                            <div class="item-price">25 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('cool-capy', 25)">Buy</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-preview">🤓</div>
+                        <div class="item-info">
+                            <div class="item-name">Smart Capy</div>
+                            <div class="item-price">30 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('smart-capy', 30)">Buy</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-preview">🥳</div>
+                        <div class="item-info">
+                            <div class="item-name">Party Capy</div>
+                            <div class="item-price">40 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('party-capy', 40)">Buy</button>
+                    </div>
+                </div>
+
+                <div class="shop-items hidden" id="accessories">
+                    <div class="shop-item">
+                        <div class="item-preview">🎩</div>
+                        <div class="item-info">
+                            <div class="item-name">Top Hat</div>
+                            <div class="item-price">35 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('top-hat', 35)">Buy</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-preview">👑</div>
+                        <div class="item-info">
+                            <div class="item-name">Crown</div>
+                            <div class="item-price">50 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('crown', 50)">Buy</button>
+                    </div>
+                </div>
+
+                <div class="shop-items hidden" id="backgrounds">
+                    <div class="shop-item">
+                        <div class="item-preview" style="background: linear-gradient(45deg, #ff6b6b, #ffd93d);">🌅</div>
+                        <div class="item-info">
+                            <div class="item-name">Sunset Theme</div>
+                            <div class="item-price">60 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('sunset-bg', 60)">Buy</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="item-preview" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">🌊</div>
+                        <div class="item-info">
+                            <div class="item-name">Ocean Theme</div>
+                            <div class="item-price">60 XP</div>
+                        </div>
+                        <button class="item-btn buy-btn" onclick="buyItem('ocean-bg', 60)">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // User data management
+        let userData = {};
+        let userProgress = {
+            xp: 86,
+            level: 2,
+            streak: 3,
+            best: 3,
+            title: 'Social Butterfly',
+            avatar: '😊',
+            unlockedItems: ['😊'],
+            equippedItems: {
+                avatar: '😊',
+                accessory: null,
+                background: null
+            }
+        };
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            loadUserProgress();
+            setupDashboard();
+            awardEntryXP();
+        });
+
+        // Load user data from localStorage
+        function loadUserData() {
+            const storedData = localStorage.getItem('happyCapyUser');
+            if (storedData) {
+                userData = JSON.parse(storedData);
+                displayUserInfo();
+            } else {
+                // Redirect to login if no user data
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Load user progress
+        function loadUserProgress() {
+            const storedProgress = localStorage.getItem('happyCapyProgress');
+            if (storedProgress) {
+                userProgress = { ...userProgress, ...JSON.parse(storedProgress) };
+            }
+            displayUserProgress();
+        }
+
+        // Save user progress
+        function saveUserProgress() {
+            localStorage.setItem('happyCapyProgress', JSON.stringify(userProgress));
+        }
+
+        // Display user information
+        function displayUserInfo() {
+            if (userData.name) {
+                document.getElementById('userName').textContent = userData.name;
+            }
+        }
+
+        // Display user progress
+        function displayUserProgress() {
+            document.getElementById('userLevel').textContent = userProgress.level;
+            document.getElementById('userTitle').textContent = userProgress.title;
+            document.getElementById('userXP').textContent = `${userProgress.xp} XP`;
+            document.getElementById('userStreak').textContent = userProgress.streak;
+            document.getElementById('userBest').textContent = userProgress.best;
+            document.getElementById('userEmoji').textContent = userProgress.avatar;
+            document.getElementById('modalXP').textContent = `${userProgress.xp} XP`;
+        }
+
+        // Award XP for entering dashboard
+        function awardEntryXP() {
+            const lastEntry = localStorage.getItem('lastDashboardEntry');
+            const today = new Date().toDateString();
+            
+            if (lastEntry !== today) {
+                userProgress.xp += 5;
+                localStorage.setItem('lastDashboardEntry', today);
+                showXPNotification('+5 XP for daily login!');
+                saveUserProgress();
+                displayUserProgress();
+            }
+        }
+
+        // Open module and award XP
+        function openModule(moduleName) {
+            // Award XP for clicking module
+            userProgress.xp += 10;
+            showXPNotification(`+10 XP for starting ${moduleName}!`);
+            saveUserProgress();
+            displayUserProgress();
+
+            // Module-specific actions
+            switch(moduleName) {
+                case 'simulation':
+                    alert('🧠 Starting Capy Simulation! Practice conversations to earn more XP.');
+                    break;
+                case 'mindfulness':
+                    alert('🧘‍♀️ Starting Mindfulness session! Complete breathing exercises for bonus XP.');
+                    break;
+                case 'affirmations':
+                    alert('⭐ Daily Affirmations loading! Positive thinking earns XP.');
+                    break;
+                case 'journal':
+                    alert('📝 Opening Journal! Write entries to earn reflection XP.');
+                    break;
+            }
+        }
+
+        // Capy Shop functionality
+        function openCapyShop() {
+            document.getElementById('capyShopModal').style.display = 'block';
+            document.getElementById('modalXP').textContent = `${userProgress.xp} XP`;
+        }
+
+        function closeCapyShop() {
+            document.getElementById('capyShopModal').style.display = 'none';
+        }
+
+        function showCategory(category) {
+            // Update active tab
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show/hide shop items
+            document.querySelectorAll('.shop-items').forEach(items => items.classList.add('hidden'));
+            document.getElementById(category).classList.remove('hidden');
+        }
+
+        function buyItem(itemId, cost) {
+            if (userProgress.xp >= cost) {
+                userProgress.xp -= cost;
+                
+                // Add item to unlocked items
+                const itemEmoji = getItemEmoji(itemId);
+                if (!userProgress.unlockedItems.includes(itemEmoji)) {
+                    userProgress.unlockedItems.push(itemEmoji);
+                }
+
+                // Auto-equip if it's an avatar
+                if (itemId.includes('capy')) {
+                    userProgress.equippedItems.avatar = itemEmoji;
+                    userProgress.avatar = itemEmoji;
+                }
+
+                saveUserProgress();
+                displayUserProgress();
+                showXPNotification(`Purchased ${itemId}! -${cost} XP`);
+                
+                // Update button
+                event.target.textContent = 'Owned';
+                event.target.classList.remove('buy-btn');
+                event.target.classList.add('owned-btn');
+            } else {
+                alert('Not enough XP! Complete more activities to earn XP.');
+            }
+        }
+
+        function getItemEmoji(itemId) {
+            const itemEmojis = {
+                'cool-capy': '😎',
+                'smart-capy': '🤓',
+                'party-capy': '🥳',
+                'top-hat': '🎩',
+                'crown': '👑',
+                'sunset-bg': '🌅',
+                'ocean-bg': '🌊'
+            };
+            return itemEmojis[itemId] || '😊';
+        }
+
+        // XP notification system
+        function showXPNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'xp-notification';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Settings and logout
+        function openSettings() {
+            alert('⚙️ Settings panel coming soon! You\'ll be able to customize notifications, privacy, and more.');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('happyCapyUser');
+                window.location.href = 'index.html';
+            }
+        }
+
+        function setupDashboard() {
+            console.log('Dashboard loaded for user:', userData.name);
+            
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                const modal = document.getElementById('capyShopModal');
+                if (event.target === modal) {
+                    closeCapyShop();
+                }
+            }
+        }
+
+        // Simulate completing activities (for testing)
+        function completeActivity(activityType) {
+            let xpGain = 0;
+            switch(activityType) {
+                case 'simulation':
+                    xpGain = 25;
+                    break;
+                case 'mindfulness':
+                    xpGain = 15;
+                    break;
+                case 'journal':
+                    xpGain = 20;
+                    break;
+                case 'affirmation':
+                    xpGain = 10;
+                    break;
+            }
+            
+            userProgress.xp += xpGain;
+            checkLevelUp();
+            saveUserProgress();
+            displayUserProgress();
+            showXPNotification(`+${xpGain} XP for completing ${activityType}!`);
+        }
+
+        // Check for level up
+        function checkLevelUp() {
+            const xpThresholds = [0, 50, 150, 300, 500, 750, 1000];
+            let newLevel = 1;
+            
+            for (let i = 0; i < xpThresholds.length; i++) {
+                if (userProgress.xp >= xpThresholds[i]) {
+                    newLevel = i + 1;
+                }
+            }
+            
+            if (newLevel > userProgress.level) {
+                userProgress.level = newLevel;
+                userProgress.title = getLevelTitle(newLevel);
+                showXPNotification(`🎉 Level Up! You're now Level ${newLevel}: ${userProgress.title}!`);
+            }
+        }
+
+        function getLevelTitle(level) {
+            const titles = [
+                'Shy Capy',
+                'Curious Capy', 
+                'Social Butterfly',
+                'Confident Capy',
+                'Charisma Champion',
+                'Communication Master',
+                'Social Superstar'
+            ];
+            return titles[level - 1] || 'Legendary Capy';
+        }
+    </script>
+</body>
+</html>

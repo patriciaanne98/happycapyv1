@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to HappyCapy - Let's Get Started</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Side - Branding -->
+        <div class="login-left">
+            <div class="brand-section">
+                <div class="logo">
+                    <img src="assets/img/IMG_9604-removebg-preview.png" alt="Happy Capy" class="logo-capy">
+                    <span class="logo-text">Happy Capy</span>
+                </div>
+                <h1>Welcome to Your Confidence Journey! 🌟</h1>
+                <p>Join thousands of teens building confidence through fun, gamified practice. Let's create your personalized experience!</p>
+                
+                <div class="features-preview">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <span>Interactive Simulations</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🧘</div>
+                        <span>Mindfulness Tools</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📝</div>
+                        <span>Personal Journaling</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <span>Achievement Tracking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="login-right">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Tell Us About Yourself</h2>
+                    <p>This helps us personalize your HappyCapy experience</p>
+                </div>
+
+                <form id="onboardingForm" class="onboarding-form">
+                    <!-- Step 1: Basic Info -->
+                    <div class="form-step active" id="step1">
+                        <div class="step-indicator">
+                            <div class="step-number">1</div>
+                            <span>Basic Info</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">What's your name? ✨</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">How old are you? 🎂</label>
+                            <select id="age" name="age" required>
+                                <option value="">Select your age</option>
+                                <option value="13">13 years old</option>
+                                <option value="14">14 years old</option>
+                                <option value="15">15 years old</option>
+                                <option value="16">16 years old</option>
+                                <option value="17">17 years old</option>
+                                <option value="18">18 years old</option>
+                                <option value="19">19+ years old</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">When's your birthday? 🎉</label>
+                            <div class="date-inputs">
+                                <select id="birthMonth" name="birthMonth" required>
+                                    <option value="">Month</option>
+                                    <option value="01">January</option>
+                                    <option value="02">February</option>
+                                    <option value="03">March</option>
+                                    <option value="04">April</option>
+                                    <option value="05">May</option>
+                                    <option value="06">June</option>
+                                    <option value="07">July</option>
+                                    <option value="08">August</option>
+                                    <option value="09">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                                <select id="birthDay" name="birthDay" required>
+                                    <option value="">Day</option>
+                                    <!-- Days 1-31 will be populated by JavaScript -->
+                                </select>
+                                <select id="birthYear" name="birthYear" required>
+                                    <option value="">Year</option>
+                                    <!-- Years will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-next" onclick="nextStep()">Continue →</button>
+                    </div>
+
+                    <!-- Step 2: Personal Details -->
+                    <div class="form-step" id="step2">
+                        <div class="step-indicator">
+                            <div class="step-number">2</div>
+                            <span>Personal Details</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>How do you identify? 🌈</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Female</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="male">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Male</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="non-binary">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Non-binary</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="prefer-not-to-say">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Prefer not to say</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-text">Other</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goal">What's your main goal with HappyCapy? 🎯</label>
+                            <select id="goal" name="goal" required>
+                                <option value="">Select your primary goal</option>
+                                <option value="speaking-class">Speaking up in class</option>
+                                <option value="making-friends">Making new friends</option>
+                                <option value="job-interviews">Preparing for job interviews</option>
+                                <option value="presentations">Giving presentations</option>
+                                <option value="social-events">Feeling comfortable at social events</option>
+                                <option value="dating-confidence">Building dating confidence</option>
+                                <option value="family-conversations">Better family conversations</option>
+                                <option value="online-interactions">Improving online interactions</option>
+                                <option value="general-confidence">Building general confidence</option>
+                                <option value="anxiety-management">Managing social anxiety</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" onclick="prevStep()">← Back</button>
+                            <button type="submit" class="btn-submit">Start My Journey 🚀</button>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-step success-step" id="success">
+                        <div class="success-content">
+                            <div class="success-icon">🎉</div>
+                            <h3>Welcome to HappyCapy!</h3>
+                            <p>Your personalized confidence journey is ready to begin. Let's help you build the social skills you've always wanted!</p>
+                            <a href="dashboard.html" class="btn-dashboard">Go to Dashboard</a>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressText">Step 1 of 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Populate day options
+        const daySelect = document.getElementById('birthDay');
+        for (let i = 1; i <= 31; i++) {
+            const option = document.createElement('option');
+            option.value = i.toString().padStart(2, '0');
+            option.textContent = i;
+            daySelect.appendChild(option);
+        }
+
+        // Populate year options (current year - 5 to current year - 20)
+        const yearSelect = document.getElementById('birthYear');
+        const currentYear = new Date().getFullYear();
+        for (let i = currentYear - 5; i >= currentYear - 20; i--) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            yearSelect.appendChild(option);
+        }
+
+        let currentStep = 1;
+
+        function nextStep() {
+            // Validate current step
+            const currentStepElement = document.getElementById(`step${currentStep}`);
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            if (!isValid) {
+                showMessage('Please fill in all required fields', 'error');
+                return;
+            }
+
+            // Hide current step
+            currentStepElement.classList.remove('active');
+            
+            // Show next step
+            currentStep++;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function prevStep() {
+            // Hide current step
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            
+            // Show previous step
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const percentage = (currentStep / 2) * 100;
+            
+            progressFill.style.width = `${percentage}%`;
+            progressText.textContent = `Step ${currentStep} of 2`;
+        }
+
+        function showMessage(message, type) {
+            // Create and show a temporary message
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.textContent = message;
+            
+            const formContainer = document.querySelector('.form-container');
+            formContainer.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
+
+        // Handle form submission
+        document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate step 2
+            const step2 = document.getElementById('step2');
+            const requiredFields = step2.querySelectorAll('[required]');
+            const genderRadios = step2.querySelectorAll('input[name="gender"]');
+            
+            let isValid = true;
+            let genderSelected = false;
+
+            // Check required select fields
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            // Check if gender is selected
+            genderRadios.forEach(radio => {
+                if (radio.checked) {
+                    genderSelected = true;
+                }
+            });
+
+            if (!genderSelected) {
+                isValid = false;
+                showMessage('Please select a gender option', 'error');
+            }
+
+            if (!isValid) {
+                showMessage('Please complete all required fields', 'error');
+                return;
+            }
+
+            // Collect form data
+            const formData = new FormData(this);
+            const userData = Object.fromEntries(formData.entries());
+            
+            // Store user data (in a real app, this would be sent to a server)
+            localStorage.setItem('happyCapyUser', JSON.stringify(userData));
+            
+            // Show success step
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('success').classList.add('active');
+            
+            // Update progress to 100%
+            document.getElementById('progressFill').style.width = '100%';
+            document.getElementById('progressText').textContent = 'Complete!';
+        });
+
+        // Initialize progress
+        updateProgress();
+    </script>
+</body>
+</html>
